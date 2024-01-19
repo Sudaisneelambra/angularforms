@@ -3,7 +3,7 @@
   <form action="" #form="ngForm" >
     <div class="inp-box">
       <label for="">name</label>
-      <input type="text" name="name" id="" [(ngModel)]="data.name" #name="ngModel"  required pattern="[A-Z]"/>
+      <input type="text" name="name" id="" [(ngModel)]="data.name" #name="ngModel"  required pattern="^[A-Z]*$"/>
       <label class="label" for="" *ngIf="form.submitted && name.errors && name.errors['required']">this field is required</label>
       <label class="label" for="" *ngIf=" name.errors && name.errors['pattern']">name only enter in Capital letters</label>
     </div>
@@ -24,14 +24,14 @@
       <label for="">phone</label>
       <input type="text" name="phone" id="" [(ngModel)]="data.phone" required  #phone="ngModel" pattern="[0-9]{10}" />
       <label class="label" for="" *ngIf="form.submitted && phone.errors && phone.errors['required']">this field is required</label>
-      <label class="label" for="" *ngIf=" phone.errors && phone.errors['pattern']">phone number must have 10 digits</label>
+      <label class="label" for="" *ngIf=" phone.errors && phone.errors['maxLength']">phone number must have 10 digits</label>
     </div>
     <div class="inp-box">
       <label for="">address</label>
-      <input type="text" name="address" id="" [(ngModel)]="data.address" required #address="ngModel"/>
+      <input type="text" name="address" id="" [(ngModel)]="data.address" required #address="ngModel" />
       <label class="label" for="" *ngIf="form.submitted && address.errors && address.errors['required']">this field is required</label>
     </div>
 
-    <button type="submit" (click)="onsubmit()">submit</button>
+    <button type="submit" (click)="onsubmit(form)">submit</button>
   </form>
 </div>
