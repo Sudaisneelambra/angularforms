@@ -1,0 +1,37 @@
+<div class="main">
+  <h1>Template driven form</h1>
+  <form action="" #form="ngForm" >
+    <div class="inp-box">
+      <label for="">name</label>
+      <input type="text" name="name" id="" [(ngModel)]="data.name" #name="ngModel"  required pattern="[A-Z]"/>
+      <label class="label" for="" *ngIf="form.submitted && name.errors && name.errors['required']">this field is required</label>
+      <label class="label" for="" *ngIf=" name.errors && name.errors['pattern']">name only enter in Capital letters</label>
+    </div>
+    <div class="inp-box">
+      <label for="">age</label>
+      <input type="number" name="age" id="" [(ngModel)]="data.age" #age="ngModel" required pattern="^(1[8-9]|[2-9][0-9]|[1-9][0-9]{2,})$"/>
+      <label class="label" for="" *ngIf="form.submitted && age.errors && age.errors['required']">this field is required</label>
+      <label class="label" for="" *ngIf=" age.errors && age.errors['pattern']">only allowed 18+ year olds </label>
+    </div>
+    <div class="inp-box">
+      <label for="">email</label>
+      <input type="email" name="email" id="" [(ngModel)]="data.mail" #mail="ngModel" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+      <label class="label" for="" *ngIf="form.submitted &&mail.errors && mail.errors['required'] ">this field is required</label>
+      <label class="label" for="" *ngIf="mail.errors && mail.errors['pattern'] ">enter mail in correct pattern</label>
+
+    </div>
+    <div class="inp-box">
+      <label for="">phone</label>
+      <input type="text" name="phone" id="" [(ngModel)]="data.phone" required  #phone="ngModel" pattern="[0-9]{10}" />
+      <label class="label" for="" *ngIf="form.submitted && phone.errors && phone.errors['required']">this field is required</label>
+      <label class="label" for="" *ngIf=" phone.errors && phone.errors['pattern']">phone number must have 10 digits</label>
+    </div>
+    <div class="inp-box">
+      <label for="">address</label>
+      <input type="text" name="address" id="" [(ngModel)]="data.address" required #address="ngModel"/>
+      <label class="label" for="" *ngIf="form.submitted && address.errors && address.errors['required']">this field is required</label>
+    </div>
+
+    <button type="submit" (click)="onsubmit()">submit</button>
+  </form>
+</div>
