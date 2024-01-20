@@ -1,11 +1,12 @@
-
+<!-- 
 <div class="main">
     <h1>Reactive form</h1>
     <form action="" [formGroup]="clary" (ngSubmit)="submit()">
       <div class="inp-box">
         <label for="">name</label>
-        <input type="text" name="name" id="" formControlName="name" />
-        <label class="label" for="" *ngIf="f['name'].errors && f['name'].errors['required'] && submitted">this is required</label>
+        <input type="text" name="name" id="" formControlName="name" /> -->
+        <!-- <label class="label" for="" *ngIf="clary.controls['name'].errors && clary.controls['name'].errors['required'] && submitted">this is required</label> -->
+        <!-- <label class="label" for="" *ngIf="f['name'].errors && f['name'].errors['required'] && submitted">this is required</label>
         <label class="label" for="" *ngIf="f['name'].errors && f['name'].errors['pattern']">name is only in capital letters</label>
       </div>
       <div class="inp-box">
@@ -18,13 +19,13 @@
         <label for="">email</label>
         <input type="email" name="email" id="" formControlName="mail"/>
         <label class="label" for="" *ngIf="f['mail'].errors && f['mail'].errors['required'] && submitted">this is required</label>
-        <label class="label" for="" *ngIf="f['mail'].errors && f['mail'].errors['pattern']">enter mail in correct formate</label>
+        <label class="label" for="" *ngIf="f['mail'].errors && f['mail'].errors['email']">enter mail in correct formate</label>
       </div>
       <div class="inp-box">
         <label for="">phone</label>
         <input type="text" name="phone" id="" formControlName="phone"/>
         <label class="label" for="" *ngIf="f['phone'].errors && f['phone'].errors['required'] && submitted">this is required</label>
-        <label class="label" for="" *ngIf="f['phone'].errors && f['phone'].errors['maxlength']">phone number must have 10 digits</label>
+        <label class="label" for="" *ngIf="f['phone'].errors && f['phone'].errors['maxlength']">phone number only 10 digits</label>
       </div>
       <div class="inp-box">
         <label for="">address</label>
@@ -35,4 +36,4 @@
       <button type="submit">submit</button>
     </form>
   </div>
-  
+   -->

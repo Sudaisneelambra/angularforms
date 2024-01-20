@@ -7,12 +7,16 @@ import { TemplateComponent } from './template/template.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
+import { FileuploadComponent } from './fileupload/fileupload.component';
+import { ChangeFormDataComponent } from './change-form-data/change-form-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    FileuploadComponent,
+    ChangeFormDataComponent
   ],
   imports: [
     BrowserModule,
