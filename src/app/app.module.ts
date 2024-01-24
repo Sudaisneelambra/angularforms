@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 import { FileuploadComponent } from './fileupload/fileupload.component';
 import { ChangeFormDataComponent } from './change-form-data/change-form-data.component';
+import { FormarrayComponent } from './formarray/formarray.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ChangeFormDataComponent } from './change-form-data/change-form-data.com
     TemplateComponent,
     ReactiveComponent,
     FileuploadComponent,
-    ChangeFormDataComponent
+    ChangeFormDataComponent,
+    FormarrayComponent
   ],
   imports: [
     BrowserModule,
